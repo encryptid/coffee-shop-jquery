@@ -3,11 +3,14 @@ let coffee = require('./coffee');
 window.addEventListener('load', function () {
     console.log('tied together!');
     
-    let menu = document.querySelector('.menu');
-    let addItem = document.querySelector('.addItem');
-    let menadd = document.querySelector('#menuTab');
-    let addTab = document.querySelector('#addTab');
-    let btn = document.querySelector('button');
+    // let menu = document.querySelector('.menu');
+    // let addItem = document.querySelector('.addItem');
+    // let menadd = document.querySelector('#menuTab');
+    // let addTab = document.querySelector('#addTab');
+    // let btn = document.querySelector('button');
+
+    let menu = $('.menu');
+    console.log(menu);
     let counter = 0;
 
     function addItems() {
