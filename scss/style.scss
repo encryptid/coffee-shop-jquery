@@ -1,0 +1,11 @@
+@import 'header.scss';
+@import 'menu.scss';
+@import 'addItem.scss';
+
+body {
+    background-image: url('https://grist.files.wordpress.com/2014/05/coffee-beans.jpg?w=1200&h=675&crop=1');
+    background-size: 100%;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}

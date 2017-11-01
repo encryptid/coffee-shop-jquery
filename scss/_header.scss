@@ -1,0 +1,21 @@
+header {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+
+    hr {
+        width: 50%;
+    }
+
+    h2 {
+        display: inline-block;
+        margin: 0;
+        padding: 2vh 5vw;
+    }
+
+    h2:hover {
+        cursor: default;
+        color: black;
+        background-color: white;
+        border-radius: 5px;
+    }
+}

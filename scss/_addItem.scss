@@ -1,0 +1,26 @@
+.addItem {
+    background-color: rgba(128, 128, 128, 0.6);
+    border-radius: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    width: 25%;
+    margin: 10vh auto;
+    padding: 1vh;
+
+    input {
+        display: block;
+        margin: 1vw;
+        width: 80%;
+    }
+
+    button {
+        border-radius: 0px;
+        border: 1px double black;
+        background-color: white;
+        width: 6vw;
+    }
+}
+
+.addItem.hidden {
+    display: none;
+}

@@ -1,0 +1,30 @@
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgba(128, 128, 128, 0.6);
+    border-radius: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+
+    ul {
+        border-bottom: 2px inset white;
+        list-style: none;
+        padding: 2vh 5vw;
+
+        li {
+            padding: .5vh;
+        }
+
+        .desc { 
+            font-style: italic;
+        }
+
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+.menu.hidden {
+    display: none;
+}
