@@ -4,31 +4,44 @@ window.addEventListener('load', function () {
     console.log('tied together!');
     
     // let menu = document.querySelector('.menu');
+    let $menu = $('.menu');
     // let addItem = document.querySelector('.addItem');
     // let menadd = document.querySelector('#menuTab');
     // let addTab = document.querySelector('#addTab');
     // let btn = document.querySelector('button');
-
-    let menu = $('.menu');
-    console.log(menu);
+    let $btn = $('button');
     let counter = 0;
 
     function addItems() {
         for (let i = counter; i < coffee.length; i++) {
-            let menuItem = document.createElement('ul');
-            let name = document.createElement('li');
-            let title = document.createElement('h2');
-            let desc = document.createElement('li');
-            let price = document.createElement('li');
-            desc.classList.add('desc');
-            title.textContent = coffee[i].name;
-            desc.textContent = coffee[i].description;
-            price.textContent = coffee[i].price;
-            menu.appendChild(menuItem);
-            name.appendChild(title);
-            menuItem.appendChild(name);
-            menuItem.appendChild(desc);
-            menuItem.appendChild(price);
+            //let menuItem = document.createElement('ul');
+            let $menuItem = $('ul');
+            //let name = document.createElement('li');
+            let $name = $('li');
+            //let title = document.createElement('h2');
+            let $title = $('h2');
+            //let desc = document.createElement('li');
+            let $desc = $('li');
+            // let price = document.createElement('li');
+            let $price = $('li');
+            // desc.classList.add('desc');
+            $desc.addClass('desc');
+            // title.textContent = coffee[i].name;
+            $title.text(coffee[i].name);
+            // desc.textContent = coffee[i].description;
+            $desc.text(coffee[i].description);
+            // price.textContent = coffee[i].price;
+            $price.text(coffee[i].price);
+            // menu.appendChild(menuItem);
+            $menu.append($menuItem);
+            // name.appendChild(title);
+            $name.append($title);
+            // menuItem.appendChild(name);
+            $menuItem.append($name);
+            // menuItem.appendChild(desc);
+            $menuItem.append($desc);
+            // menuItem.appendChild(price);
+            $menuItem.append($price);
             counter++
         };
     };
@@ -49,16 +62,20 @@ window.addEventListener('load', function () {
         };
     });
 
-    btn.addEventListener('click', function() {
-        let name = document.querySelector('#name');
-        let desc = document.querySelector('#desc');
-        let price = document.querySelector('#price');
-        let newCoffee = { name: name.value, description: desc.value, price: `$` + price.value };
-        coffee.push(newCoffee);
-        addItems();
-        name.value = "";
-        desc.value = "";
-        price.value = "";
+    // btn.addEventListener('click', function() {
+    //     let name = document.querySelector('#name');
+    //     let desc = document.querySelector('#desc');
+    //     let price = document.querySelector('#price');
+    //     let newCoffee = { name: name.value, description: desc.value, price: `$` + price.value };
+    //     coffee.push(newCoffee);
+    //     addItems();
+    //     name.value = "";
+    //     desc.value = "";
+    //     price.value = "";
+    // });
+
+    $btn.on('click', function() {
+        console.log('kittens!');
     });
 
 });
