@@ -2,28 +2,35 @@ let coffee = require('./coffee');
 
 window.addEventListener('load', function () {
     console.log('tied together!');
+
+    // I'm leaving in the vanilla JS for a side-by-side comparison.
+    // It's bulky, but useful.
     
     // let menu = document.querySelector('.menu');
     let $menu = $('.menu');
     // let addItem = document.querySelector('.addItem');
+    let $addItem = $('.addItem');
     // let menadd = document.querySelector('#menuTab');
+    let $menuTab = $('#menuTab');
     // let addTab = document.querySelector('#addTab');
+    let $addTab = $('#addTab');
     // let btn = document.querySelector('button');
-    let $btn = $('button');
+    let $btn = $('.submit');
     let counter = 0;
 
     function addItems() {
+        
         for (let i = counter; i < coffee.length; i++) {
             //let menuItem = document.createElement('ul');
-            let $menuItem = $('ul');
+            let $menuItem = $('<ul></ul>');
             //let name = document.createElement('li');
-            let $name = $('li');
+            let $name = $('<li></li>');
             //let title = document.createElement('h2');
-            let $title = $('h2');
+            let $title = $('<h2></h2>');
             //let desc = document.createElement('li');
-            let $desc = $('li');
+            let $desc = $('<li></li>');
             // let price = document.createElement('li');
-            let $price = $('li');
+            let $price = $('<li></li>');
             // desc.classList.add('desc');
             $desc.addClass('desc');
             // title.textContent = coffee[i].name;
@@ -48,18 +55,20 @@ window.addEventListener('load', function () {
 
     addItems();
 
-    menuTab.addEventListener('click',function() {
-        if (menu.classList.contains('hidden')) {
-            menu.classList.remove('hidden');
-            addItem.classList.add('hidden');
-        }
-    });
+    $menuTab.on('click', function() {
+    //     // if (menu.classList.contains('hidden')) {
+    //     //     menu.classList.remove('hidden');
+    //     //     addItem.classList.add('hidden');
+    //     // }
+         console.log('candy');
+     });
 
-    addTab.addEventListener('click',function() {
-        if (addItem.classList.contains('hidden')) {
-            addItem.classList.remove('hidden');
-            menu.classList.add('hidden');
-        };
+    $addTab.on('click', function() {
+        // if ($addItem.classList.contains('hidden')) {
+            // $addItem.classList.remove('hidden');
+            // $menu.classList.add('hidden');
+        //};
+        console.log('unicorns');
     });
 
     // btn.addEventListener('click', function() {
@@ -75,6 +84,7 @@ window.addEventListener('load', function () {
     // });
 
     $btn.on('click', function() {
+        console.log($btn);
         console.log('kittens!');
     });
 

@@ -26,3 +26,8 @@ We'll be using jQuery and jQuery UI (a popular plugin to jQuery) for tonight's a
 ## Hard mode
 
 Make it possible to add any number of properties to each food.
+
+## Log:
+* I don't know why I thought this, but I thought when you assigned an element to a variable using jQuery, it created the element. I don't know why I thought that.
+
+It turns out, you have to add tags to the declaration, i.e.,: `let $title = $('<h2></h2>');` Previously, I was attempting to create a new `<h2>` simply by writing: `let $title = $('h2');`. Which effectively referenced every `<h2>` on the page, and became a bit of a problem when my JS assigned it a value.
