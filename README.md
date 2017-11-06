@@ -5,8 +5,9 @@ A remake of the coffee shop from cms-esque using jQuery.
 
 Modify your menu app to include some new features enabled by jQuery. See the sample code at the bottom for all the scripts you'll need to include. I'd suggest starting with step 1, then doing step 3, then doing step 2.
 
-1. Add a new property to each food, which includes a set of strings describing categories for the food. Potential categories include vegetarian, low-cal, and gluten-free. You should be able to add one of these categories to a new food using jQuery autocomplete (documentation here). Show the properties in the DOM with the food.
-2. Instead of using class="hidden" to show/hide multiple views, use jQuery tabs instead. Here's the documentation. You should also add a third tab, which should display vegetarian-friendly food only ('vegetarian' being one of the categories).
+1. Complete your menu app from yesterday (jQuery: optional).
+2. Add a new property to each food, which includes a set of strings describing categories for the food. Potential categories include vegetarian, low-cal, and gluten-free. You should be able to add one of these categories to a new food using jQuery autocomplete (documentation here). Show the properties in the DOM with the food.
+3. Instead of using class="hidden" to show/hide multiple views, use jQuery tabs instead. Here's the documentation. You should also add a third tab, which should display vegetarian-friendly food only ('vegetarian' being one of the categories).
 
 ## Using jQuery
 
@@ -28,6 +29,8 @@ We'll be using jQuery and jQuery UI (a popular plugin to jQuery) for tonight's a
 Make it possible to add any number of properties to each food.
 
 ## Log:
-* I don't know why I thought this, but I thought when you assigned an element to a variable using jQuery, it created the element. I don't know why I thought that.
-
-It turns out, you have to add tags to the declaration, i.e.,: `let $title = $('<h2></h2>');` Previously, I was attempting to create a new `<h2>` simply by writing: `let $title = $('h2');`. Which effectively referenced every `<h2>` on the page, and became a bit of a problem when my JS assigned it a value.
+* It is considered good form to prefix your jQuery-reliant variables with `$`, i.e., `let $input = $('input');`
+* In jQuery, you can add tags to a declaration to create an element, i.e.,: `let $title = $('<h2></h2>');`
+* Event listeners in jQuery are executed using `.on()`
+* To get the value of a textbox in jQuery, you must use `.val` as a function, i.e., `$input.val();`. It feels weird to me, but such is life.
+* App completely switched over to jQuery. Now

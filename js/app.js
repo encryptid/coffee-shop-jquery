@@ -57,34 +57,36 @@ window.addEventListener('load', function () {
 
     $menuTab.on('click', function() {
     //     // if (menu.classList.contains('hidden')) {
-    //     //     menu.classList.remove('hidden');
-    //     //     addItem.classList.add('hidden');
+            $menu.removeClass('hidden');
+            $addItem.addClass('hidden');
     //     // }
          console.log('candy');
      });
 
     $addTab.on('click', function() {
         // if ($addItem.classList.contains('hidden')) {
-            // $addItem.classList.remove('hidden');
-            // $menu.classList.add('hidden');
-        //};
+            $addItem.removeClass('hidden');
+            $menu.addClass('hidden');
+        // };
         console.log('unicorns');
     });
 
     // btn.addEventListener('click', function() {
-    //     let name = document.querySelector('#name');
-    //     let desc = document.querySelector('#desc');
-    //     let price = document.querySelector('#price');
-    //     let newCoffee = { name: name.value, description: desc.value, price: `$` + price.value };
-    //     coffee.push(newCoffee);
-    //     addItems();
-    //     name.value = "";
-    //     desc.value = "";
-    //     price.value = "";
-    // });
-
     $btn.on('click', function() {
-        console.log($btn);
+    //     let name = document.querySelector('#name');
+        let $name = $('#name');
+    //     let desc = document.querySelector('#desc');
+        let $desc = $('#desc');
+    //     let price = document.querySelector('#price');
+        let $price = $('#price');
+    //     let newCoffee = { name: name.value, description: desc.value, price: `$` + price.value };
+        let $newCoffee = { name: $name.val(), description: $desc.val(), price: `$` + $price.val() };
+    //     coffee.push(newCoffee);
+        coffee.push($newCoffee);
+        addItems();
+        $name.val("");
+        $desc.val("");
+        $price.val("");
         console.log('kittens!');
     });
 
