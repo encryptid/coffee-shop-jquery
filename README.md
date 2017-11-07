@@ -5,9 +5,9 @@ A remake of the coffee shop from cms-esque using jQuery.
 
 Modify your menu app to include some new features enabled by jQuery. See the sample code at the bottom for all the scripts you'll need to include. I'd suggest starting with step 1, then doing step 3, then doing step 2.
 
-[x] Complete your menu app from yesterday (jQuery: optional).
-2. Add a new property to each food, which includes a set of strings describing categories for the food. Potential categories include vegetarian, low-cal, and gluten-free. You should be able to add one of these categories to a new food using jQuery autocomplete (documentation here). Show the properties in the DOM with the food.
-[x] Instead of using class="hidden" to show/hide multiple views, use jQuery tabs instead. Here's the documentation. You should also add a third tab, which should display vegetarian-friendly food only ('vegetarian' being one of the categories).
+- [x] Complete your menu app from yesterday (jQuery: optional).
+- [ ] Add a new property to each food, which includes a set of strings describing categories for the food. Potential categories include vegetarian, low-cal, and gluten-free. You should be able to add one of these categories to a new food using jQuery autocomplete (documentation here). Show the properties in the DOM with the food.
+- [x] Instead of using class="hidden" to show/hide multiple views, use jQuery tabs instead. Here's the documentation. You should also add a third tab, which should display vegetarian-friendly food only ('vegetarian' being one of the categories).
 
 ## Using jQuery
 
