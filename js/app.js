@@ -7,19 +7,18 @@ window.addEventListener('load', function () {
     // It's bulky, but useful.
     
     // let menu = document.querySelector('.menu');
-    let $menu = $('.menu');
+    let $menu = $('#menuContent');
     // let addItem = document.querySelector('.addItem');
-    let $addItem = $('.addItem');
+    let $addItem = $('#addContent');
     // let menadd = document.querySelector('#menuTab');
-    let $menuTab = $('#menuTab');
+    //let $menuTab = $('#menuTab');
     // let addTab = document.querySelector('#addTab');
-    let $addTab = $('#addTab');
+    //let $addTab = $('#addTab');
     // let btn = document.querySelector('button');
     let $btn = $('.submit');
     let counter = 0;
 
     function addItems() {
-        
         for (let i = counter; i < coffee.length; i++) {
             //let menuItem = document.createElement('ul');
             let $menuItem = $('<ul></ul>');
@@ -55,21 +54,21 @@ window.addEventListener('load', function () {
 
     addItems();
 
-    $menuTab.on('click', function() {
-    //     // if (menu.classList.contains('hidden')) {
-            $menu.removeClass('hidden');
-            $addItem.addClass('hidden');
-    //     // }
-         console.log('candy');
-     });
+    // $menuTab.on('click', function() {
+    // //     // if (menu.classList.contains('hidden')) {
+    //         $menu.removeClass('hidden');
+    //         $addItem.addClass('hidden');
+    // //     // }
+    //      console.log('candy');
+    //  });
 
-    $addTab.on('click', function() {
-        // if ($addItem.classList.contains('hidden')) {
-            $addItem.removeClass('hidden');
-            $menu.addClass('hidden');
-        // };
-        console.log('unicorns');
-    });
+    // $addTab.on('click', function() {
+    //     // if ($addItem.classList.contains('hidden')) {
+    //         $addItem.removeClass('hidden');
+    //         $menu.addClass('hidden');
+    //     // };
+    //     console.log('unicorns');
+    // });
 
     // btn.addEventListener('click', function() {
     $btn.on('click', function() {
@@ -89,5 +88,7 @@ window.addEventListener('load', function () {
         $price.val("");
         console.log('kittens!');
     });
+
+    $('#tabs').tabs({active: '#menuContent'});
 
 });

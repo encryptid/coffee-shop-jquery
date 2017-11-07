@@ -10,30 +10,38 @@
 </head>
 
 <body>
-    <header>
         <h1>Cafe Josué</h1>
+    <hr>
+    <div id="tabs">
+        <ul class="buttons">
+            <li id="menuTab">
+                <a href="#menuContent">Menu</a>
+            </li>
+            <li id="addTab">
+                <a href="#addContent">Add Item to Menu</a>
+            </li>
+            <li id="tags">
+                <a href="#tagContent">Vegetarian</a>
+            </li>
+        </ul>
         <hr>
-        <h2 id="menuTab">Menu</h2>
-        <h2 id="addTab">Add Item to Menu</h2>
-        <hr>
-    </header>
-    <section class="menu">
-    </section>
-    <section class="addItem hidden">
-        <h2>Add menu item:</h2>
-        <input id="name" placeholder='Menu item name'>
-        <input id="desc" placeholder="Menu item description">
-        <input id="price" placeholder="Menu item price">
-        <button class="submit">Submit</button>
-    </section>
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-    <script
-    src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
-    integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
-    crossorigin="anonymous"></script>
+        <section id="menuContent">
+        </section>
+        <section id="addContent">
+            <h2>Add menu item:</h2>
+            <input id="name" placeholder='Menu item name'>
+            <input id="desc" placeholder="Menu item description">
+            <input id="price" placeholder="Menu item price">
+            <button class="submit">Submit</button>
+        </section>
+        <section id="tagContent">
+            <h2>Coffee</h2>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

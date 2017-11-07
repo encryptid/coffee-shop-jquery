@@ -1,21 +1,38 @@
-header {
+body {
     text-align: center;
-    font-family: 'Permanent Marker', cursive;
 
     hr {
         width: 50%;
     }
 
-    h2 {
+    li {
         display: inline-block;
         margin: 0;
         padding: 2vh 5vw;
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
     }
 
-    h2:hover {
+    .buttons li:hover {
         cursor: default;
         color: black;
         background-color: white;
         border-radius: 5px;
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+    }
+    a:visited {
+        color: white;
+    }
+
+    #menuContent li {
+        display: block;
     }
 }
