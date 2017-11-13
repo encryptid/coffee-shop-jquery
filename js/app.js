@@ -31,6 +31,7 @@ window.addEventListener('load', function () {
             // let price = document.createElement('li');
             let $price = $('<li></li>');
             // desc.classList.add('desc');
+            let $tags = $('<li></li>');
             $desc.addClass('desc');
             // title.textContent = coffee[i].name;
             $title.text(coffee[i].name);
@@ -48,6 +49,16 @@ window.addEventListener('load', function () {
             $menuItem.append($desc);
             // menuItem.appendChild(price);
             $menuItem.append($price);
+            let current = coffee[i];
+            for (let i = 0; i < current.tags.length; i++) {
+                console.log(current.tags);
+                let $tag = $('<p></p>')
+                let $close = $('<span>x</span>')
+                $menuItem.append($tags);
+                $tag.append($close);
+                $tags.append($tag);
+                $tag.text(current.tags);
+                }
             counter++
         };
     };
