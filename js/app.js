@@ -58,7 +58,6 @@ window.addEventListener('load', function () {
                 $tag.prepend($close);
                 $menuItem.append($tags);
                 $tags.append($tag);
-                
                 }
             counter++;
         };
