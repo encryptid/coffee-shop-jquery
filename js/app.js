@@ -49,17 +49,18 @@ window.addEventListener('load', function () {
             $menuItem.append($desc);
             // menuItem.appendChild(price);
             $menuItem.append($price);
-            let current = coffee[i];
-            for (let i = 0; i < current.tags.length; i++) {
-                console.log(current.tags);
-                let $tag = $('<p></p>')
-                let $close = $('<span>x</span>')
+            $tags.addClass('tags');
+            for (let j = 0; j < coffee[i].tags.length; j++) {
+                let $tag = $('<p></p>');
+                let $close = $('<span></span>');
+                $tag.text(coffee[i].tags[j]);
+                $close.text('x');
+                $tag.prepend($close);
                 $menuItem.append($tags);
-                $tag.append($close);
                 $tags.append($tag);
-                $tag.text(current.tags);
+                
                 }
-            counter++
+            counter++;
         };
     };
 
