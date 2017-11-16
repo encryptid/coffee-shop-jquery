@@ -7,7 +7,7 @@ Modify your menu app to include some new features enabled by jQuery. See the sam
 
 - [x] Complete your menu app (jQuery: optional).
 
-- [ ] Add a new property to each food, which includes a set of strings describing categories for the food. Potential categories include vegetarian, low-cal, and gluten-free. You should be able to add one of these categories to a new food using jQuery autocomplete (documentation here). Show the properties in the DOM with the food.
+- [ ] Add a new property to each food, which includes a set of strings describing categories for the food. Potential categories include vegetarian, low-cal, and gluten-free. You should be able to add one of these categories to a new food using jQuery autocomplete [(documentation here)](http://api.jqueryui.com/autocomplete/). Show the properties in the DOM with the food.
 
 - [x] Instead of using class="hidden" to show/hide multiple views, use jQuery tabs instead. Here's the documentation. You should also add a third tab, which should display vegetarian-friendly food only ('vegetarian' being one of the categories).
 
@@ -37,6 +37,8 @@ Make it possible to add any number of properties to each food.
 * To get the value of a textbox in jQuery, you must use `.val` as a function, i.e., `$input.val();`. It feels weird to me, but such is life.
 * App completely switched over to jQuery.
 * Tab switching is now handled by jQuery Tabs. It, of course, would have been easier to build the page from the ground up using Tabs than switching it over, but nonetheless, it feels less intuitive to me than vanilla JS in 2017.
+* Page currently renders strings from JS as tags on objects, however there is no current logical impact to the page.
+* Had to add `.find('search')` to autocomplete function due to a weird initialization error. Not sure why, I'll have to look into it. The error has gone away, but I'm not sure the function is working properly. Still testing.
 
 ## Next Steps:
 ### Step 2:

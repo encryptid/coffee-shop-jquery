@@ -1,10 +1,11 @@
 let coffee = require('./coffee');
 
 window.addEventListener('load', function () {
-    console.log('tied together!');
 
     // I'm leaving in the vanilla JS for a side-by-side comparison.
     // It's bulky, but useful.
+    let $tagNames = ['espresso', 'dairy-free', 'cold','lightly sweet', 
+    'refreshing', 'ginger beer', 'lime', 'coffee',]
     
     // let menu = document.querySelector('.menu');
     let $menu = $('#menuContent');
@@ -59,6 +60,21 @@ window.addEventListener('load', function () {
                 $menuItem.append($tags);
                 $tags.append($tag);
                 }
+            let $add = $('<p></p>');
+            $add.text('+');
+            $add.addClass('add');
+            $tags.prepend($add);
+            let $search = $('<input></input');
+            $search.addClass('search');
+            $search.attr('placeholder', 'search tags');
+            $tags.append($search);
+            $search.find('search').autocomplete("enable", {
+                appendTo: ".search",
+                source: $tagNames,
+            });
+            // $add.on('click', function(){
+            //     $search.removeClass('hidden');
+            // });
             counter++;
         };
     };
