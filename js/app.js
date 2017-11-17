@@ -5,7 +5,7 @@ window.addEventListener('load', function () {
     // I'm leaving in the vanilla JS for a side-by-side comparison.
     // It's bulky, but useful.
     let $tagNames = ['espresso', 'dairy-free', 'cold','lightly sweet', 
-    'refreshing', 'ginger beer', 'lime', 'coffee',]
+    'refreshing', 'ginger beer', 'lime', 'coffee',];
     
     // let menu = document.querySelector('.menu');
     let $menu = $('#menuContent');
@@ -68,13 +68,19 @@ window.addEventListener('load', function () {
             $search.addClass('search');
             $search.attr('placeholder', 'search tags');
             $tags.append($search);
-            $search.find('search').autocomplete("enable", {
-                appendTo: ".search",
-                source: $tagNames,
-            });
-            // $add.on('click', function(){
-            //     $search.removeClass('hidden');
+            // $search.find('search').autocomplete("enable", {
+            //     appendTo: ".search",
+            //     source: $tagNames,
             // });
+
+            $search.autocomplete({
+                source: $tagNames,
+                position: {of: $search},
+            });
+            $add.on('click', function(){
+                $search.removeClass('hidden');
+                $search.autocomplete('search')
+            });
             counter++;
         };
     };
