@@ -76,6 +76,7 @@ window.addEventListener('load', function () {
             $search.autocomplete({
                 source: $tagNames,
                 position: {of: $search},
+                appendTo: $tags,
             });
             $add.on('click', function(){
                 $search.removeClass('hidden');

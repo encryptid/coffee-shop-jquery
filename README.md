@@ -40,7 +40,9 @@ Make it possible to add any number of properties to each food.
 * Page currently renders strings from JS as tags on objects, however there is no current logical impact to the page.
 * Had to add `.find('search')` to autocomplete function due to a weird initialization error. Not sure why, I'll have to look into it. The error has gone away, but I'm not sure the function is working properly. Still testing.
 * By simplifying the 'autocomplete' function, I was able to observe some changes; the suggested results will now appear about a half screen away from the actual input (which creates a horizontal scroll when active on the right-most column), as well as a notification that results are found at the bottom of the screen (where it is unreadable if one is at the top of the page). It's not ideal, but it is movement.
-  * Upon further inspection, it appears what is happening is `autocomplete` is adding a number of hidden divs/uls (corresponding to the supplied source) to the bottom of the page. As results in the input box are matched, the divs are "un-hidden". So, these divs need to be associated with the input box, somehow. The answer might be in the APIs Extension Points.
+  * Upon further inspection, it appears what is happening is `autocomplete` is adding a number of hidden divs/uls (corresponding to the supplied source) to the bottom of the page. As results in the input box are matched, the divs are "un-hidden". So, these divs need to be associated with the input box, somehow. ~~The answer might be in the APIs Extension Points.~~
+  * UPDATE: the `appendTo` option is initialized on the `autocomplete` function to associate the menu with the desired element. By associating it with the "tags" section and doing a bit of styling, I got it much closer to what I envisioned.
+
 
 ## Next Steps:
 ### Step 2:
