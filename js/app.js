@@ -85,9 +85,18 @@ window.addEventListener('load', function () {
             $submitTag.on('click', function() {
                 $tagNames.push($search.val());
                 coffee[i].tags.push($search.val());
+                console.log(document.querySelector('.tags p').length);
                 // console.log(coffee[i].tags);
-                $search.addClass('hidden');
-            })
+                // let $tag = $('<p></p>');
+                // let $close = $('<span></span>');
+                // $tag.text(coffee[i].tags);
+                // $close.text('x');
+                // $tag.prepend($close);
+                // $menuItem.append($tags);
+                // $tags.append($tag);
+                // $search.addClass('hidden');
+                // };
+            });
 
             counter++;
         };
