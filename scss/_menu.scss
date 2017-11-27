@@ -64,7 +64,7 @@
             input {
                 width: 60%;
                 padding: 2px;
-                margin: 5px 20px;
+                margin: 5px 2px 5px 20px;
                 border-radius: 20px;
                 border: none;
             }
@@ -80,6 +80,15 @@
                     background-color: rgb(104,120,204);
                     color: white;
                 }
+            }
+
+            button {
+                border-radius: 20px;
+                padding: 0 5px;
+                margin: 5px 0px 0px 0px;
+                height: 18px;
+                background-color: rgba(41,121,255, .5);
+                color: white;
             }
         }
     }

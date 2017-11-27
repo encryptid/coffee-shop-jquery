@@ -4,9 +4,9 @@ window.addEventListener('load', function () {
 
     // I'm leaving in the vanilla JS for a side-by-side comparison.
     // It's bulky, but useful.
-    let $tagNames = ['espresso', 'dairy-free', 'cold','lightly sweet', 
-    'refreshing', 'ginger beer', 'lime', 'coffee',];
-    
+    let $tagNames = ['espresso', 'dairy-free', 'cold', 'lightly sweet',
+        'refreshing', 'ginger beer', 'lime', 'coffee',];
+
     // let menu = document.querySelector('.menu');
     let $menu = $('#menuContent');
     // let addItem = document.querySelector('.addItem');
@@ -51,6 +51,7 @@ window.addEventListener('load', function () {
             // menuItem.appendChild(price);
             $menuItem.append($price);
             $tags.addClass('tags');
+
             for (let j = 0; j < coffee[i].tags.length; j++) {
                 let $tag = $('<p></p>');
                 let $close = $('<span></span>');
@@ -59,29 +60,35 @@ window.addEventListener('load', function () {
                 $tag.prepend($close);
                 $menuItem.append($tags);
                 $tags.append($tag);
-                }
+            };
+            
             let $add = $('<p></p>');
             $add.text('+');
             $add.addClass('add');
             $tags.prepend($add);
-            let $search = $('<input></input');
+            let $search = $('<input></input>');
             $search.addClass('search');
             $search.attr('placeholder', 'search tags');
+            let $submitTag = $('<button>submit</button>');
             $tags.append($search);
-            // $search.find('search').autocomplete("enable", {
-            //     appendTo: ".search",
-            //     source: $tagNames,
-            // });
+            $tags.append($submitTag);
 
             $search.autocomplete({
                 source: $tagNames,
-                position: {of: $search},
+                position: { of: $search },
                 appendTo: $tags,
             });
-            $add.on('click', function(){
+            $add.on('click', function () {
                 $search.removeClass('hidden');
-                $search.autocomplete('search')
+                //$search.autocomplete('search')
             });
+            $submitTag.on('click', function() {
+                $tagNames.push($search.val());
+                coffee[i].tags.push($search.val());
+                // console.log(coffee[i].tags);
+                $search.addClass('hidden');
+            })
+
             counter++;
         };
     };
@@ -105,16 +112,16 @@ window.addEventListener('load', function () {
     // });
 
     // btn.addEventListener('click', function() {
-    $btn.on('click', function() {
-    //     let name = document.querySelector('#name');
+    $btn.on('click', function () {
+        //     let name = document.querySelector('#name');
         let $name = $('#name');
-    //     let desc = document.querySelector('#desc');
+        //     let desc = document.querySelector('#desc');
         let $desc = $('#desc');
-    //     let price = document.querySelector('#price');
+        //     let price = document.querySelector('#price');
         let $price = $('#price');
-    //     let newCoffee = { name: name.value, description: desc.value, price: `$` + price.value };
+        //     let newCoffee = { name: name.value, description: desc.value, price: `$` + price.value };
         let $newCoffee = { name: $name.val(), description: $desc.val(), price: `$` + $price.val() };
-    //     coffee.push(newCoffee);
+        //     coffee.push(newCoffee);
         coffee.push($newCoffee);
         addItems();
         $name.val("");
@@ -123,6 +130,6 @@ window.addEventListener('load', function () {
         console.log('kittens!');
     });
 
-    $('#tabs').tabs({active: '#menuContent'});
+    $('#tabs').tabs({ active: '#menuContent' });
 
 });
