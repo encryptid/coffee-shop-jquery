@@ -8,15 +8,15 @@ window.addEventListener('load', function () {
         'refreshing', 'ginger beer', 'lime', 'coffee',];
 
     // let menu = document.querySelector('.menu');
-    let $menu = $('#menuContent');
-    // let addItem = document.querySelector('.addItem');
-    let $addItem = $('#addContent');
-    // let menadd = document.querySelector('#menuTab');
-    //let $menuTab = $('#menuTab');
-    // let addTab = document.querySelector('#addTab');
-    //let $addTab = $('#addTab');
-    // let btn = document.querySelector('button');
-    let $btn = $('.submit');
+    const $menu = $('#menuContent');
+    // const addItem = document.querySelector('.addItem');
+    const $addItem = $('#addContent');
+    // const menadd = document.querySelector('#menuTab');
+    //const $menuTab = $('#menuTab');
+    // const addTab = document.querySelector('#addTab');
+    //const $addTab = $('#addTab');
+    // const btn = document.querySelector('button');
+    const $btn = $('.submit');
     let counter = 0;
 
     function addItems() {
@@ -61,7 +61,7 @@ window.addEventListener('load', function () {
                 $menuItem.append($tags);
                 $tags.append($tag);
             };
-            
+
             let $add = $('<p></p>');
             $add.text('+');
             $add.addClass('add');
@@ -83,19 +83,35 @@ window.addEventListener('load', function () {
                 //$search.autocomplete('search')
             });
             $submitTag.on('click', function() {
-                $tagNames.push($search.val());
-                coffee[i].tags.push($search.val());
-                console.log(document.querySelector('.tags p').length);
-                // console.log(coffee[i].tags);
-                // let $tag = $('<p></p>');
-                // let $close = $('<span></span>');
-                // $tag.text(coffee[i].tags);
-                // $close.text('x');
-                // $tag.prepend($close);
-                // $menuItem.append($tags);
-                // $tags.append($tag);
-                // $search.addClass('hidden');
-                // };
+                /* Next steps:
+                * I. Check how many tags we already have,
+                * II. If it is less than the amount after the new one was pushed,
+                    * a. create a copy of the existing object, add the value of
+                        the search box to it, compare the existing object to the
+                        new value.
+                * Re-run the code that creates another tag */
+
+                console.log(coffee[i].tags);
+                for (let j = 0; j < coffee[i].tags.length; j++) {
+                    console.log(coffee[i].tags);
+                    console.log(coffee[i].tags[j]);
+                    if (coffee[i].tags[j] === $search.val()) {
+                        console.log("ooops!");
+                    } else {
+                        let newTag = coffee[i].tags;
+                        console.log("current newTag value: " + newTag);
+                        newTag.push($search.val());
+                        // coffee[i].tags.push($search.val());
+                        let $tag = $('<p></p>');
+                        let $close = $('<span></span>');
+                        $tag.text($search.val());
+                        $close.text('x');
+                        $tag.prepend($close);
+                        $menuItem.append($tags);
+                        $tags.append($tag);
+                        $search.addClass('hidden');
+                    };
+                };
             });
 
             counter++;
