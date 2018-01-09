@@ -91,27 +91,40 @@ window.addEventListener('load', function () {
                         new value.
                 * Re-run the code that creates another tag */
 
-                console.log(coffee[i].tags);
-                for (let j = 0; j < coffee[i].tags.length; j++) {
-                    console.log(coffee[i].tags);
-                    console.log(coffee[i].tags[j]);
-                    if (coffee[i].tags[j] === $search.val()) {
-                        console.log("ooops!");
-                    } else {
-                        let newTag = coffee[i].tags;
-                        console.log("current newTag value: " + newTag);
-                        newTag.push($search.val());
-                        // coffee[i].tags.push($search.val());
-                        let $tag = $('<p></p>');
-                        let $close = $('<span></span>');
-                        $tag.text($search.val());
-                        $close.text('x');
-                        $tag.prepend($close);
-                        $menuItem.append($tags);
-                        $tags.append($tag);
-                        $search.addClass('hidden');
-                    };
-                };
+                let tagData = coffee[i].tags;
+                let newTag = coffee[i].tags.slice(0); //create new array with
+                //the same value as coffee[i].tags
+                newTag.push($search.val()); //add to that array the value of
+                //the textbox.
+                newTag.reverse();
+                console.log(newTag);
+
+                for (let i = 0; i < newTag.length; i++) {
+                    for (let j = 0; j < tagData.length; j++) {
+                        console.log(tagData[i], newTag);
+                        if (tagData[i] === newTag[j]) {
+                            newTag.pop();
+                            console.log(newTag);
+                        } else {
+                            console.log('all good!');
+                        }
+                    }
+                }
+
+                // for (let j = tagData.length; j < newTag.length; j++) {
+                //     if (coffee[i].tags[j] === $search.val()) {
+                //         console.log("ooops!");
+                //     } else {
+                //         let $tag = $('<p></p>');
+                //         let $close = $('<span></span>');
+                //         $tag.text($search.val());
+                //         $close.text('x');
+                //         $tag.prepend($close);
+                //         $menuItem.append($tags);
+                //         $tags.append($tag);
+                //         $search.addClass('hidden');
+                //     };
+                // };
             });
 
             counter++;
