@@ -82,7 +82,7 @@ window.addEventListener('load', function () {
                 $search.removeClass('hidden');
                 //$search.autocomplete('search')
             });
-            $submitTag.on('click', function() {
+            $submitTag.on('click', function () {
                 /* Next steps:
                 * I. Check how many tags we already have,
                 * II. If it is less than the amount after the new one was pushed,
@@ -92,24 +92,17 @@ window.addEventListener('load', function () {
                 * Re-run the code that creates another tag */
 
                 let tagData = coffee[i].tags;
-                let newTag = coffee[i].tags.slice(0); //create new array with
-                //the same value as coffee[i].tags
-                newTag.push($search.val()); //add to that array the value of
-                //the textbox.
-                newTag.reverse();
-                console.log(newTag);
+                let newTag = $search.val();
 
-                for (let i = 0; i < newTag.length; i++) {
-                    for (let j = 0; j < tagData.length; j++) {
-                        console.log(tagData[i], newTag);
-                        if (tagData[i] === newTag[j]) {
-                            newTag.pop();
-                            console.log(newTag);
-                        } else {
-                            console.log('all good!');
-                        }
-                    }
-                }
+                if (tagData.indexOf(newTag) === -1) {
+                    tagData.push(newTag);
+                    console.log(tagData);
+                };
+
+//At this point, we're checking to see if the string exists already in the
+//main coffee object tag. If it does not, we add it. From here, we should
+//re-run addItems() to include the newly-added data somehow
+
 
                 // for (let j = tagData.length; j < newTag.length; j++) {
                 //     if (coffee[i].tags[j] === $search.val()) {
