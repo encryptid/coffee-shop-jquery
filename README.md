@@ -50,3 +50,19 @@ Make it possible to add any number of properties to each food.
 * Determine the criteria for tags, since I departed slightly from the "food" approach. Possibly "dairy-free", "vegan", "sugar free", or "espresso"?
 * Give users ability to add one of these tags to new items and display them in the DOM
 * Re-work the 'vegetarian' page to display results of items filtered down to a particular tag.
+
+##Struggles
+###Log 1/15
+For the last few weeks, the problem that I've been struggling with is how to get this "tag" section of the app to run properly. I've been making very small,  incremental steps toward resolving it, but it feels a lot like 1 step forward, a half-step back.
+
+The problem I currently grapple with is that I need to update the 'tag' section when the 'coffee' object is updated (which occurs when a new tag is added in the text input box).
+
+The current solution I've arrived at is to destroy the children of
+the "tags" section and re-render them with the new data. The issue that I'm
+now running into is, as the code is currently written, this only works exactly once.
+
+It's been clear to me for some time that this code could be re-factored to 
+modularize it and reuse functions (as I'm attempting to use almost identical code more than once), but how to do so without breaking everything
+is eluding me. I think I'm too close to it right now.
+
+Really, what would be ideal is not to destroy the entire tag section, but update it with only the newest tag in the "coffee" object. Another issue that I encounter with this approach is that, because the "submit" button is rendered in the beginning with the page, the new tag appears *after* the submit button, which is very undesirable. However, solving this problem may prove to be more elegant than tearing down an entire section and re-rendering it.
