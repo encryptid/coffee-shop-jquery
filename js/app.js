@@ -102,52 +102,13 @@ window.addEventListener('load', function () {
                 if (tagData.indexOf(newTag) === -1) {
                     tagData.push(newTag);
                     console.log(tagData);
+                };
+            });
 
 //At this point, we're checking to see if the string exists already in the
 //main coffee object tag. If it does not, we add it. From here, we should
-//re-run addItems() to include the newly-added data somehow
-
-/* 1/15 - so the current solution I've arrived at is to destroy the children of
-the "tags" section and re-render them with the new data. The issue that we're
-now running into is, as the code is currently written, this only works once.
-It's been clear to me for some time that this code code be re-factored to 
-modularize it and reuse functions, but how to do so without breaking everything
-is eluding me. I think I'm too close to it right now. */
-            $tags.empty();
-
-            for (let j = 0; j < coffee[i].tags.length; j++) {
-                let $tag = $('<p></p>');
-                let $close = $('<span></span>');
-                $tag.text(coffee[i].tags[j]);
-                $close.text('x');
-                $tag.prepend($close);
-                $menuItem.append($tags);
-                $tags.append($tag);
-            };
-
-//////////Add '+', search box, and search button//////////
-            $add = $('<p></p>');
-            $add.text('+');
-            $add.addClass('add');
-            $tags.prepend($add);
-            $search = $('<input></input>');
-            $search.addClass('search');
-            $search.attr('placeholder', 'search tags');
-            $submitTag = $('<button>submit</button>');
-            $tags.append($search);
-            $tags.append($submitTag);
-
-            $search.autocomplete({
-                source: $tagNames,
-                position: { of: $search },
-                appendTo: $tags,
-            });
-            $add.on('click', function () {
-                $search.removeClass('hidden');
-                //$search.autocomplete('search')
-            });
-        };
-    });
+//re-run addItems() to include the newly-added data somehow. Or maybe fix how
+//the button appears
 
 
                 // for (let j = tagData.length; j < newTag.length; j++) {

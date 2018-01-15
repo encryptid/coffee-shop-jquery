@@ -51,8 +51,8 @@ Make it possible to add any number of properties to each food.
 * Give users ability to add one of these tags to new items and display them in the DOM
 * Re-work the 'vegetarian' page to display results of items filtered down to a particular tag.
 
-##Struggles
-###Log 1/15
+## Struggles
+### Log 1/15
 For the last few weeks, the problem that I've been struggling with is how to get this "tag" section of the app to run properly. I've been making very small,  incremental steps toward resolving it, but it feels a lot like 1 step forward, a half-step back.
 
 The problem I currently grapple with is that I need to update the 'tag' section when the 'coffee' object is updated (which occurs when a new tag is added in the text input box).
