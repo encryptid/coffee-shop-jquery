@@ -23,7 +23,7 @@ window.addEventListener('load', function () {
 
     function addItems() {
 //first, we run a for loop
-//everytime we encounter an item inside of the "coffee" object...
+//every time we encounter an item inside of the "coffee" object...
 //create the building blocks of our page
         for (let i = counter; i < coffee.length; i++) {
             //let menuItem = document.createElement('ul');
@@ -38,6 +38,7 @@ window.addEventListener('load', function () {
             let $price = $('<li></li>');
             // desc.classList.add('desc');
             let $tags = $('<li></li>');
+            let $tagBox = $('<ul></ul>')
             $desc.addClass('desc');
             // title.textContent = coffee[i].name;
             $title.text(coffee[i].name);
@@ -56,19 +57,23 @@ window.addEventListener('load', function () {
             // menuItem.appendChild(price);
             $menuItem.append($price);
             $tags.addClass('tags');
+            $tags.append($tagBox);
+            $menuItem.append($tags);
 
 //////////Add tag section//////////
 
 //next, we'll create the "tag" section. Every time we encounter an item in the
 //tags section, create the building blocks of the tag section
             for (let j = 0; j < coffee[i].tags.length; j++) {
-                let $tag = $('<p></p>');
+                //let $tagBox = $('<ul></ul>')
+                let $tag = $('<li></li>');
                 let $close = $('<span></span>');
                 $tag.text(coffee[i].tags[j]);
                 $close.text('x');
+                $tagBox.append($tag);
                 $tag.prepend($close);
-                $menuItem.append($tags);
-                $tags.append($tag);
+                //$menuItem.append($tags);
+                //$tags.append($tagBox);
             };
 
 //////////Add '+', search box, and search button//////////
@@ -80,6 +85,7 @@ window.addEventListener('load', function () {
             $search.addClass('search');
             $search.attr('placeholder', 'search tags');
             let $submitTag = $('<button>submit</button>');
+            $submitTag.addClass('sub-tag');
             $tags.append($search);
             $tags.append($submitTag);
 
@@ -102,8 +108,11 @@ window.addEventListener('load', function () {
                 if (tagData.indexOf(newTag) === -1) {
                     tagData.push(newTag);
                     console.log(tagData);
+                    $search.val('');
                 };
             });
+
+            
 
 //At this point, we're checking to see if the string exists already in the
 //main coffee object tag. If it does not, we add it. From here, we should

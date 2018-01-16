@@ -66,3 +66,6 @@ modularize it and reuse functions (as I'm attempting to use almost identical cod
 is eluding me. I think I'm too close to it right now.
 
 Really, what would be ideal is not to destroy the entire tag section, but update it with only the newest tag in the "coffee" object. Another issue that I encounter with this approach is that, because the "submit" button is rendered in the beginning with the page, the new tag appears *after* the submit button, which is very undesirable. However, solving this problem may prove to be more elegant than tearing down an entire section and re-rendering it.
+
+### 1/16/18
+Made complete spaghetti of my code. But for a purpose! I have come to the conclusion that separating my tags from the rest of the container will solve all of my problems. Then I need only append to the container that holds the tags and the textbox and search bar are no longer a problem... right?
