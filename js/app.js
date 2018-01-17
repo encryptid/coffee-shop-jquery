@@ -110,29 +110,24 @@ window.addEventListener('load', function () {
                 if (tagData.indexOf(newTag) === -1) {
                     tagData.push(newTag);
                     console.log(tagData);
-                    $search.val('');
-                };
-            });
+                    // $search.val('');
+            //     };
+            // });
+//Next step: re-incorporate this function and see if it solves the issue:
+//UPDATE: it seems to be working ONCE, like before. But everything looks nice!
 
-            
-
-//At this point, we're checking to see if the string exists already in the
-//main coffee object tag. If it does not, we add it. From here, we should
-//re-run addItems() to include the newly-added data somehow. Or maybe fix how
-//the button appears
-
-
-                // for (let j = tagData.length; j < newTag.length; j++) {
-                //         let $tag = $('<p></p>');
-                //         let $close = $('<span></span>');
-                //         $tag.text($search.val());
-                //         $close.text('x');
-                //         $tag.prepend($close);
-                //         $menuItem.append($tags);
-                //         $tags.append($tag);
-                //         $search.addClass('hidden');
-                //     };
-                // };
+                    for (let j = tagData.length; j < newTag.length; j++) {
+                        let $tag = $('<li></li>');
+                        let $close = $('<span></span>');
+                        $tag.text($search.val());
+                        $close.text('x');
+                        $tag.prepend($close);
+                        $tagBox.append($tag);
+                        // $tagBox.append($tag);
+                        // $search.addClass('hidden');
+                    };
+            };
+        });
 
             counter++;
         };

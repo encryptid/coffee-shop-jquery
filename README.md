@@ -72,3 +72,5 @@ Made complete spaghetti of my code. But for a purpose! I have come to the conclu
 
 ### 1/17/18
 Spent a lot of time futzing with the CSS, which broke when I added a container for the individual tag items. As is so often the case, I had styles above the item I was styling that I didn't notice affecting my items and I seem to have resolved it. The moment of truth will be hooking my JS back up to add tags, but I don't think that's going to get done today.
+
+UPDATE: I re-integrated the function and it seems to be working like a charm... Once. When you attempt to add a second tag, the whole function goes ballistic and seems to add the new element 9 times. I'm not sure exactly why yet, but we're making progress!
