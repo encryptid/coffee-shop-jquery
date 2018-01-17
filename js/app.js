@@ -28,6 +28,7 @@ window.addEventListener('load', function () {
         for (let i = counter; i < coffee.length; i++) {
             //let menuItem = document.createElement('ul');
             let $menuItem = $('<ul></ul>');
+            $menuItem.addClass('menuItem');
             //let name = document.createElement('li');
             let $name = $('<li></li>');
             //let title = document.createElement('h2');
@@ -39,6 +40,7 @@ window.addEventListener('load', function () {
             // desc.classList.add('desc');
             let $tags = $('<li></li>');
             let $tagBox = $('<ul></ul>')
+            $tagBox.addClass('tbox');
             $desc.addClass('desc');
             // title.textContent = coffee[i].name;
             $title.text(coffee[i].name);

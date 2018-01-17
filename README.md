@@ -69,3 +69,6 @@ Really, what would be ideal is not to destroy the entire tag section, but update
 
 ### 1/16/18
 Made complete spaghetti of my code. But for a purpose! I have come to the conclusion that separating my tags from the rest of the container will solve all of my problems. Then I need only append to the container that holds the tags and the textbox and search bar are no longer a problem... right?
+
+### 1/17/18
+Spent a lot of time futzing with the CSS, which broke when I added a container for the individual tag items. As is so often the case, I had styles above the item I was styling that I didn't notice affecting my items and I seem to have resolved it. The moment of truth will be hooking my JS back up to add tags, but I don't think that's going to get done today.
