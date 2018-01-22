@@ -74,3 +74,6 @@ Made complete spaghetti of my code. But for a purpose! I have come to the conclu
 Spent a lot of time futzing with the CSS, which broke when I added a container for the individual tag items. As is so often the case, I had styles above the item I was styling that I didn't notice affecting my items and I seem to have resolved it. The moment of truth will be hooking my JS back up to add tags, but I don't think that's going to get done today.
 
 UPDATE: I re-integrated the function and it seems to be working like a charm... Once. When you attempt to add a second tag, the whole function goes ballistic and seems to add the new element 9 times. I'm not sure exactly why yet, but we're making progress!
+
+### 1/22/18
+By removing the for loop and simply allowing the verification function to write directly to the DOM, I seem to have solved the problem. I would have liked to figure out a way to use the more elegant solution of updating the DOM when the array of coffee qualities itself is updated, but this works for now. The styling needed fixing again, as it went a bit janky when multiple lines of tags were added.

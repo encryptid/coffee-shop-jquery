@@ -110,22 +110,32 @@ window.addEventListener('load', function () {
                 if (tagData.indexOf(newTag) === -1) {
                     tagData.push(newTag);
                     console.log(tagData);
+                    console.log(tagData.length);
                     // $search.val('');
             //     };
             // });
-//Next step: re-incorporate this function and see if it solves the issue:
-//UPDATE: it seems to be working ONCE, like before. But everything looks nice!
 
-                    for (let j = tagData.length; j < newTag.length; j++) {
-                        let $tag = $('<li></li>');
-                        let $close = $('<span></span>');
-                        $tag.text($search.val());
-                        $close.text('x');
-                        $tag.prepend($close);
-                        $tagBox.append($tag);
-                        // $tagBox.append($tag);
-                        // $search.addClass('hidden');
-                    };
+//Did away with the for loop and writing directly to the DOM once for each term.
+//While it does appear to be working, I would like for it to pull the extra one
+//from the coffee tag array itself. A framework would make it easier because of
+// data binding, but we're not doing frameworks here.
+                    let $tag = $('<li></li>');
+                    let $close = $('<span></span>');
+                    $tag.text($search.val());
+                    $close.text('x');
+                    $tag.prepend($close);
+                    $tagBox.append($tag);
+
+                    // for (let k = tagData.length; k < newTag.length; k++) {
+                    //     console.log('tagData is ' + tagData.length + ' long.');
+                    //     let $tag = $('<li></li>');
+                    //     let $close = $('<span></span>');
+                    //     $tag.text($search.val());
+                    //     $close.text('x');
+                    //     $tag.prepend($close);
+                    //     $tagBox.append($tag);
+                    //     // $search.addClass('hidden');
+                    // };
             };
         });
 
