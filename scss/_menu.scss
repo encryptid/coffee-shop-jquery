@@ -35,12 +35,13 @@
             margin: auto;
 
             .tbox {
+                // display: flex;
                 padding: 0;
                 margin-left: 1vw;
                 background-color: transparent;
                 border: 0;
                 height: 35px;
-                overflow-y: scroll;
+                overflow-y: hidden;
             
                 li {
                     display: inline-block;
