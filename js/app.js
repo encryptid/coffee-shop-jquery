@@ -65,7 +65,8 @@ window.addEventListener("load", function () {
 			//////////Add tag section//////////
 
 			//next, we"ll create the "tag" section. Every time we encounter an item in the
-			//tags section, create the building blocks of the tag section
+            //tags section, create the building blocks of the tag section
+            console.log(coffee[i].tags);
 			for (let j = 0; j < coffee[i].tags.length; j++) {
 				//let $tagBox = $("<ul></ul>")
 				let $tag = $("<li></li>");
@@ -82,14 +83,18 @@ window.addEventListener("load", function () {
 			let $add = $("<p></p>");
 			$add.text("+");
 			$add.addClass("add");
-			$tags.prepend($add);
+            $tags.prepend($add);
+            let $searchBox = $("<div></div>");
+            $searchBox.addClass("searchBox");
 			let $search = $("<input></input>");
 			$search.addClass("search");
 			$search.attr("placeholder", "search tags");
 			let $submitTag = $("<button>submit</button>");
-			$submitTag.addClass("sub-tag");
-			$tags.append($search);
-			$tags.append($submitTag);
+            $submitTag.addClass("sub-tag");
+            $searchBox.append($search);
+            $searchBox.append($submitTag);
+			$tags.append($searchBox);
+			// $tags.append($submitTag);
 
 			$search.autocomplete({
 				source: $tagNames,
@@ -168,15 +173,19 @@ window.addEventListener("load", function () {
 		//     let desc = document.querySelector("#desc");
 		let $desc = $("#desc");
 		//     let price = document.querySelector("#price");
-		let $price = $("#price");
+        let $price = $("#price");
+        let $btnTags = $("#tags");
 		//     let newCoffee = { name: name.value, description: desc.value, price: `$` + price.value };
-		let $newCoffee = { name: $name.val(), description: $desc.val(), price: `$` + $price.val() };
+		let $newCoffee = { name: $name.val(), description: $desc.val(), price: `$` + $price.val(), tags: [$btnTags.val()], };
 		//     coffee.push(newCoffee);
-		coffee.push($newCoffee);
+        coffee.push($newCoffee);
+        console.log("line 178");
+        console.log(coffee);
 		addItems();
 		$name.val("");
 		$desc.val("");
-		$price.val("");
+        $price.val("");
+        $btnTags.val("");
 		console.log("kittens!");
 	});
 

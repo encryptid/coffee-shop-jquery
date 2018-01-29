@@ -63,6 +63,8 @@
             }
 
             .add {
+                // display: inline;
+                flex: 0 1 15px;
                 padding: 0;
                 width: 15px;
                 background-color: rgba(41,121,255, .7);
@@ -75,34 +77,39 @@
                 margin-right: 0;
             }
 
-            input {
-                width: 60%;
-                padding: 2px;
-                margin: 5px 2px 5px 20px;
-                border-radius: 20px;
-                border: none;
-            }
+            .searchBox {
+                display: block;
+                width: 100%;
 
-            #ui-id-1 {
-                position: absolute;
-                background-color: white;
-                color: black;
-                text-align: left;
-                padding: 2px;
+                input {
+                    width: 60%;
+                    padding: 2px;
+                    margin: 5px 2px 5px 20px;
+                    border-radius: 20px;
+                    border: none;
+                }
 
-                li:hover {
-                    background-color: rgb(104,120,204);
+                #ui-id-1 {
+                    position: absolute;
+                    background-color: white;
+                    color: black;
+                    text-align: left;
+                    padding: 2px;
+
+                    li:hover {
+                        background-color: rgb(104,120,204);
+                        color: white;
+                    }
+                }
+
+                button {
+                    border-radius: 20px;
+                    padding: 0 5px;
+                    margin: 5px 0px 0px 0px;
+                    height: 18px;
+                    background-color: rgba(41,121,255, .5);
                     color: white;
                 }
-            }
-
-            button {
-                border-radius: 20px;
-                padding: 0 5px;
-                margin: 5px 0px 0px 0px;
-                height: 18px;
-                background-color: rgba(41,121,255, .5);
-                color: white;
             }
         }
     }
