@@ -114,6 +114,7 @@ window.addEventListener("load", function () {
 
 				if (tagData.indexOf(newTag) === -1) {
 					tagData.push(newTag);
+					$tagNames.push(newTag);
 					console.log(tagData);
 					console.log(tagData.length);
 					// $search.val("");
